@@ -38,6 +38,7 @@ _PLATFORM_CMAKE_SYSTEM_NAME = {
     "//build_tools/bazel:iree_is_windows": "Windows",
     # target_compatible_with constraint labels.
     "@platforms//os:android": "Android",
+    "@platforms//os:ios": "iOS",
     "@platforms//os:linux": "Linux",
     "@platforms//os:macos": "Darwin",
     "@platforms//os:windows": "Windows",
