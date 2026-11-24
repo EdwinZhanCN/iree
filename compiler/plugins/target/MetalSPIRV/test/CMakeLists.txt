@@ -14,9 +14,11 @@ iree_lit_test_suite(
   NAME
     lit
   SRCS
+    "ios_subgroup_reduction.mlir"
     "smoketest.mlir"
   TOOLS
     FileCheck
+    iree-compile
     iree-opt
 )
 

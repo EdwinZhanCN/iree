@@ -16,11 +16,15 @@ iree_lit_test_suite(
     name = "lit",
     srcs = enforce_glob(
         # keep sorted
-        ["smoketest.mlir"],
+        [
+            "ios_subgroup_reduction.mlir",
+            "smoketest.mlir",
+        ],
         include = ["*.mlir"],
     ),
     cfg = "//compiler:lit.cfg.py",
     tools = [
+        "//tools:iree-compile",
         "//tools:iree-opt",
         "@llvm-project//llvm:FileCheck",
     ],
