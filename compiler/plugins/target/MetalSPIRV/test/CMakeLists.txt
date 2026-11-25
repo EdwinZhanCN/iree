@@ -15,9 +15,11 @@ iree_lit_test_suite(
     lit
   SRCS
     "external_executable.mlir"
+    "ios_subgroup_reduction.mlir"
     "smoketest.mlir"
   TOOLS
     FileCheck
+    iree-compile
     iree-opt
 )
 

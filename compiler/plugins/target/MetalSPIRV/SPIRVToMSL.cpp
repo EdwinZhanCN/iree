@@ -103,6 +103,11 @@ public:
     case IREE::HAL::MetalTargetPlatform::iOS:
     case IREE::HAL::MetalTargetPlatform::iOSSimulator:
       spvCrossOptions.platform = SPIRVToMSLCompiler::Options::Platform::iOS;
+      // Use SIMD-group functions for subgroup ops, as on macOS. Otherwise
+      // SPIRV-Cross uses quad-group functions on iOS and rejects subgroup
+      // arithmetic, which the default Apple target enables. SIMD-group
+      // permutes need Apple6 (A13) and reductions Apple7 (A14).
+      spvCrossOptions.ios_use_simdgroup_functions = true;
       break;
     }
     spvCrossOptions.msl_version =
